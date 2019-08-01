@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small_small">2dp</dimen>
+    <dimen name="margin_small_medium">5dp</dimen>
+    <dimen name="margin_small_big">10dp</dimen>
+    <dimen name="margin_medium_small">15dp</dimen>
+    <dimen name="margin_medium_medium">20dp</dimen>
+    <dimen name="margin_medium_big">25dp</dimen>
+    <dimen name="margin_big_small">30dp</dimen>
+    <dimen name="margin_big_medium">35dp</dimen>
+    <dimen name="margin_big_big">40dp</dimen>
+    <dimen name="margin_giant_small">45dp</dimen>
+    <dimen name="margin_giant_medium">50dp</dimen>
+    <dimen name="margin_giant_big">55dp</dimen>
+    <dimen name="margin_giant_giant">60dp</dimen>
+
+
+    <dimen name="text_size_tiny_small">6sp</dimen>
+    <dimen name="text_size_tiny_medium">7sp</dimen>
+    <dimen name="text_size_tiny_big">8sp</dimen>
+    <dimen name="text_size_small_small">10sp</dimen>
+    <dimen name="text_size_small_medium1">11sp</dimen>
+    <dimen name="text_size_small_medium">12sp</dimen>
+    <dimen name="text_size_small_big">14sp</dimen>
+    <dimen name="text_size_medium_small">16sp</dimen>
+    <dimen name="text_size_medium_medium">18sp</dimen>
+    <dimen name="text_size_medium_big">20sp</dimen>
+    <dimen name="text_size_big_small">22sp</dimen>
+    <dimen name="text_size_big_medium">24sp</dimen>
+    <dimen name="text_size_big_big">26sp</dimen>
+    <dimen name="text_size_giant">28sp</dimen>
+    <dimen name="corner_radius">5dp</dimen>
+
+</resources>

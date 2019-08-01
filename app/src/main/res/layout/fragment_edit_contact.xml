@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.maxot.contactbook.data.db.entity.Contact" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_small"
+                android:layout_marginTop="@dimen/margin_medium_small"
+                android:layout_marginEnd="@dimen/margin_medium_small"
+                android:text="@{data.firstName}"
+                android:hint="@string/name" />
+
+            <EditText
+                android:id="@+id/et_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_small"
+                android:layout_marginTop="@dimen/margin_medium_small"
+                android:layout_marginEnd="@dimen/margin_medium_small"
+                android:text="@{data.secondName}"
+                android:hint="@string/last_name" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_small"
+                android:layout_marginTop="@dimen/margin_medium_small"
+                android:layout_marginEnd="@dimen/margin_medium_small"
+                android:text="@string/emails"
+                android:textSize="@dimen/text_size_medium_big"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_emails"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_add_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium_small"
+                android:text="@string/add_email" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_small"
+                android:layout_marginTop="@dimen/margin_medium_small"
+                android:layout_marginEnd="@dimen/margin_medium_small"
+                android:text="@string/phones"
+                android:textSize="@dimen/text_size_medium_big"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_phones"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_new_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium_small"
+                android:text="@string/new_phone_number" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium_small"
+                android:text="@string/save" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</layout>

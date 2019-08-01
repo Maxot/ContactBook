@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.maxot.contactbook.data.db.entity.Contact" />
+
+        <variable
+            name="handler"
+            type="com.maxot.contactbook.ui.window.contacts.ContactsFragment.InteractionHandler" />
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:onClick="@{() -> handler.onContactClick(data.id)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium_small"
+            android:elevation="@dimen/cardview_default_elevation"
+            app:cardCornerRadius="@dimen/corner_radius">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small_big"
+                android:text='@{data.firstName + " " + data.secondName}'
+                android:textAlignment="center" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+
+</layout>

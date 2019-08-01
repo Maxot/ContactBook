@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ContactBook</string>
+    <string name="action_settings">Settings</string>
+    <string name="default_web_client_id">800846361696-43bq1t7l0gff4sepnmnk24q7b1puefdq.apps.googleusercontent.com</string>
+    <string name="name">Name</string>
+    <string name="last_name">Last name</string>
+    <string name="email">E-mail</string>
+    <string name="emails">Emails:</string>
+    <string name="add_email">Add email</string>
+    <string name="new_phone_number">Add phone number</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="phones">Phone numbers:</string>
+</resources>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.maxot.contactbook.data.db.entity.Contact" />
+
+        <variable
+            name="handler"
+            type="com.maxot.contactbook.ui.window.contact.ContactFragment.InteractionHandler" />
+
+
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium_small"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:cardCornerRadius="@dimen/corner_radius">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_medium_small"
+                        android:text="@{data.firstName}"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_medium_small"
+                        android:text="@{data.secondName}"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_medium_small"
+                        android:layout_marginTop="@dimen/margin_medium_small"
+                        android:layout_marginEnd="@dimen/margin_medium_small"
+                        android:text="@string/emails"
+                        android:textSize="@dimen/text_size_medium_big"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_emails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_medium_small"
+                        android:layout_marginTop="@dimen/margin_medium_small"
+                        android:layout_marginEnd="@dimen/margin_medium_small"
+                        android:text="@string/phones"
+                        android:textSize="@dimen/text_size_medium_big"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_phones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+
+                    <Button
+                        android:id="@+id/btn_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/margin_medium_small"
+                        android:onClick="@{() -> handler.onEditClick(data.id)}"
+                        android:text="@string/edit" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
