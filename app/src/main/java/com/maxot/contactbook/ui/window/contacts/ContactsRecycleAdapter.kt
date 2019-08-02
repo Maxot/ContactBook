@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.maxot.contactbook.data.db.entity.Contact
 import com.maxot.contactbook.databinding.ItemContactBinding
 
-class ContactsRecycleAdapter(var data: List<Contact>, var interactionHandler: ContactsFragment.InteractionHandler) : RecyclerView.Adapter<ContactsRecycleAdapter.ViewHolder>() {
+class ContactsRecycleAdapter(var data: List<Contact>,
+                             var interactionHandler: ContactsFragment.InteractionHandler) : RecyclerView.Adapter<ContactsRecycleAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ItemContactBinding.inflate(layoutInflater, parent, false)
@@ -19,6 +20,11 @@ class ContactsRecycleAdapter(var data: List<Contact>, var interactionHandler: Co
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(data[position], interactionHandler)
+    }
+
+    fun updateData(newData: List<Contact>){
+        data = newData
+        notifyDataSetChanged()
     }
 
 

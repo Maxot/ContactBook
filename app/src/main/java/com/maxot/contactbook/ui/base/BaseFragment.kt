@@ -28,7 +28,6 @@ abstract class BaseFragment<T: BaseViewModel, V : ViewDataBinding> : androidx.fr
 
         mViewDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
         mViewDataBinding.setVariable(getBindingVariable(), getViewModel())
-//        mViewDataBinding.executePendingBindings()
         mViewModel = getViewModel()
 
         return mViewDataBinding.root
@@ -55,7 +54,4 @@ abstract class BaseFragment<T: BaseViewModel, V : ViewDataBinding> : androidx.fr
 
     abstract fun getBindingVariable(): Int
 
-//    override fun getOptionMenuId(): Int {
-//        return R.menu.feed_menu
-//    }
 }

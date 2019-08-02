@@ -17,4 +17,12 @@ class ContactViewModel(application: Application) : BaseViewModel(application){
             contact.postValue(repository.getContact(ownerName, id))
         }
     }
+
+    val deleteContact = MutableLiveData<String>()
+
+    fun deleteContact(contact: Contact){
+        scope.launch {
+            deleteContact.postValue(repository.deleteContact(contact))
+        }
+    }
 }

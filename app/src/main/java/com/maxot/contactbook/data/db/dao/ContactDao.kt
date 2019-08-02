@@ -6,7 +6,7 @@ import com.maxot.contactbook.data.db.entity.Contact
 @Dao
 interface ContactDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertContact(contact: Contact)
+    suspend fun insertContact(contact: Contact): Long
 
     @Update
     suspend fun updateContact(contact: Contact)

@@ -6,10 +6,16 @@
     <data>
 
         <import type="android.view.View" />
+        <import type="com.maxot.contactbook.constant.ContactType" />
+        <import type="android.text.InputType" />
 
         <variable
             name="data"
             type="String" />
+
+        <variable
+            name="contactType"
+            type="com.maxot.contactbook.constant.ContactType" />
 
     </data>
 
@@ -27,7 +33,8 @@
             android:layout_marginTop="@dimen/margin_medium_small"
             android:layout_marginStart="@dimen/margin_medium_small"
             android:layout_marginEnd="@dimen/margin_medium_small"
-            android:hint="@string/email" />
+            android:inputType='@{contactType == ContactType.EMAIL ? InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS : InputType.TYPE_CLASS_PHONE}'
+            android:hint='@{contactType == ContactType.EMAIL ? @string/email : @string/phone}' />
 
     </RelativeLayout>
 

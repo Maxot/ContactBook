@@ -3,9 +3,10 @@ package com.maxot.contactbook.ui.window.edit
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.maxot.contactbook.constant.ContactType
 import com.maxot.contactbook.databinding.ItemInputDataBinding
 
-class StringRecycleAdapter(var data: ArrayList<String>) : RecyclerView.Adapter<StringRecycleAdapter.ViewHolder>() {
+class PhoneEmailEditRecycleAdapter(var data: ArrayList<String>, var contactType: ContactType) : RecyclerView.Adapter<PhoneEmailEditRecycleAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ItemInputDataBinding.inflate(layoutInflater, parent, false)
@@ -17,7 +18,7 @@ class StringRecycleAdapter(var data: ArrayList<String>) : RecyclerView.Adapter<S
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(data[position])
+        holder.bind(data[position], contactType)
     }
 
     fun getSize(): Int{
@@ -30,10 +31,10 @@ class StringRecycleAdapter(var data: ArrayList<String>) : RecyclerView.Adapter<S
 
     class ViewHolder(var binding: ItemInputDataBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(data: String) {
+        fun bind(data: String, contactType: ContactType) {
             binding.data = data
+            binding.contactType = contactType
             binding.editText.requestFocus()
-
         }
     }
 }

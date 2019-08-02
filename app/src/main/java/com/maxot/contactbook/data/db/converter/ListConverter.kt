@@ -11,14 +11,11 @@ class ListConverter {
 
     @TypeConverter
     fun fromTimestamp(data: String?): List<String>? {
-
         if (data == null) {
             return Collections.emptyList()
         }
         val listType = object : TypeToken<ArrayList<String>>() {}.type
         return gson.fromJson(data, listType)
-
-
     }
 
     @TypeConverter

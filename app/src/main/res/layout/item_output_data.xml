@@ -16,6 +16,10 @@
             name="contactType"
             type="com.maxot.contactbook.constant.ContactType" />
 
+        <variable
+            name="handler"
+            type="com.maxot.contactbook.ui.window.contact.ContactFragment.InteractionHandler" />
+
     </data>
 
 
@@ -24,15 +28,15 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:onClick="@{() -> handler.onCallOrEmailClick(contactType, data)}"
             android:text="@{data}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:drawableRight='@{contactType == ContactType.EMAIL ? @drawable/ic_email : @drawable/ic_call}'
+            android:drawableEnd='@{contactType == ContactType.EMAIL ? @drawable/ic_email : @drawable/ic_call}'
+            android:hint='@{contactType == ContactType.EMAIL ? @string/email : @string/phone}'
             android:layout_marginTop="@dimen/margin_medium_small"
             android:layout_marginStart="@dimen/margin_medium_small"
-            android:layout_marginEnd="@dimen/margin_medium_small"
-            android:hint="@string/email" />
+            android:layout_marginEnd="@dimen/margin_medium_small" />
 
     </RelativeLayout>
 

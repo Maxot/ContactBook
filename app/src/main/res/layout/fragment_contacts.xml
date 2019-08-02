@@ -7,10 +7,13 @@
 
         <import type="android.view.View" />
 
-        <!--<variable-->
-        <!--name="item"-->
-        <!--type="com.milestns.vprognozepro.ui.window.feed.FeedFragment" />-->
+        <variable
+            name="email"
+            type="String" />
 
+        <variable
+            name="handler"
+            type="com.maxot.contactbook.ui.window.contacts.ContactsFragment.InteractionHandler" />
     </data>
 
 
@@ -18,21 +21,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/tv_user_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{"Your email: " + email }'
+            android:layout_margin="@dimen/margin_medium_medium" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerContact"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_below="@id/tv_user_email" />
+
+        <TextView
+            android:id="@+id/tv_have_not_contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/have_not_contcts" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_new_contact"
+            android:onClick="@{() -> handler.onNewContactClick()}"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/margin_medium_big"
-            android:src="@drawable/ic_add"
-            android:layout_height="wrap_content" />
+            android:src="@drawable/ic_add" />
 
     </RelativeLayout>
-
 
 </layout>

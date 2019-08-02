@@ -1,9 +1,12 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context="com.maxot.contactbook.MainActivity">
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:orderInCategory="100"
-          app:showAsAction="never"/>
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sort"
+        android:title="@string/sort" />
+
+    <item
+        android:id="@+id/log_out"
+        android:title="@string/log_out" />
+
 </menu>
